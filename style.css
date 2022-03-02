@@ -1,0 +1,131 @@
+:root {
+  --ff-primary: "Poppins", sans-serif;
+  --clr-primary-1: hsl(0, 78%, 62%);
+  --clr-primary-2: hsl(180, 62%, 55%);
+  --clr-primary-3: hsl(34, 97%, 64%);
+  --clr-primary-4: hsl(212, 86%, 64%);
+  --clr-neutral-1: hsl(234, 12%, 34%);
+  --clr-neutral-2: hsl(229, 6%, 66%);
+  --clr-neutral-3: hsl(0, 0%, 98%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-primary);
+}
+
+h2 {
+  color: var(--clr-neutral-1);
+}
+
+/* CONTAINER */
+
+.container {
+  width: min(85%, 80rem);
+  margin-block: 4rem;
+}
+
+/* GRID */
+
+.container__Grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* HEADER */
+
+.container__Header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.container__Header p {
+  margin-top: 1rem;
+  margin-inline: 2rem;
+  color: var(--clr-neutral-2);
+}
+
+.header__LightTitle {
+  font-weight: lighter;
+}
+
+/* ARTICLES */
+
+.container__Article {
+  min-height: 14rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0rem 0rem 1rem rgb(0 0 0 / 0.5);
+  border-radius: 0.5rem;
+}
+
+.container__Article img {
+  margin-top: 2em;
+  float: right;
+}
+
+.container__Article p {
+  margin-top: 0.3rem;
+  color: var(--clr-neutral-2);
+}
+
+/* COLORED BORDER TOP */
+
+.cyan-border-top {
+  border-top: 5px solid var(--clr-primary-2);
+}
+
+.firebrick-border-top {
+  border-top: 5px solid var(--clr-primary-1);
+}
+
+.orange-border-top {
+  border-top: 5px solid var(--clr-primary-3);
+}
+
+.navy-border-top {
+  border-top: 5px solid var(--clr-primary-4);
+}
+
+@media (min-width: 50rem) {
+  .container__Grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .grid-1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  .grid-2 {
+    grid-column: 3 / span 2;
+  }
+
+  .grid-3 {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+  }
+
+  .grid-4 {
+    grid-column: 5 / span 2;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  .container__Article {
+    min-height: 16rem;
+    max-width: 40rem;
+  }
+
+  .header__LightTitle,
+  .header__BoldTitle {
+    font-size: 2.3rem;
+  }
+}
